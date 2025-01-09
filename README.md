@@ -16,19 +16,30 @@ This document provides a comprehensive guide to deploying and managing a simple 
 1. **Prepare Your HTML Application:**
     - Create `index.html` and `styles.css`:
       ```html
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <link rel="stylesheet" href="styles.css">
-          <title>Simple Web App</title>
-      </head>
-      <body>
-          <h1>Welcome to My Simple Web App</h1>
-          <p>This is a demo application hosted on AWS.</p>
-      </body>
-      </html>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Simple Web Application</title>
+            <link rel="stylesheet" href="styles.css">
+        </head>
+        <body>
+            <div class="container">
+                <h1>Welcome to My Simple Web Application!</h1>
+                <p>This is a basic web application hosted on AWS EC2.</p>
+                <button id="clickButton">Click Me!</button>
+                <p id="responseText"></p>
+            </div>
+        
+            <script>
+                document.getElementById("clickButton").addEventListener("click", function() {
+                    document.getElementById("responseText").textContent = "You clicked the button!";
+                });
+            </script>
+        </body>
+        </html>
+
       ```
       ```css
       body {
